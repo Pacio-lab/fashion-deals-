@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <title>Fashion Deals</title>
+  <title>Fashion & Beauty Deals</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
@@ -30,9 +30,9 @@ header {
   -webkit-backdrop-filter: blur(12px);
   padding: 52px 20px 0;
 }
-.header-inner { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px; }
+.header-inner { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
 .header-label { font-size: 10px; letter-spacing: 0.25em; color: #6b5e4e; font-weight: 500; margin-bottom: 5px; }
-h1 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: #e8e0d5; line-height: 1.15; }
+h1 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: #e8e0d5; line-height: 1.25; }
 h1 em { font-style: italic; font-weight: 400; color: #c8a96e; }
 .header-sub { font-size: 11px; color: #6b5e4e; margin-top: 5px; font-weight: 300; }
 #refresh-btn {
@@ -41,20 +41,31 @@ h1 em { font-style: italic; font-weight: 400; color: #c8a96e; }
   font-family: 'DM Sans', sans-serif; white-space: nowrap; flex-shrink: 0;
   -webkit-tap-highlight-color: transparent;
 }
-#refresh-btn:active { background: #1a1714; }
+
+.sephora-banner {
+  display: flex; align-items: center; justify-content: space-between;
+  background: #1a1016; border: 1px solid #3a1a2a;
+  border-radius: 8px; padding: 10px 14px; margin-bottom: 14px;
+  text-decoration: none; color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+.sephora-banner:active { opacity: 0.8; }
+.sephora-left { display: flex; align-items: center; gap: 10px; }
+.sephora-tag { background: #e2005a; color: #fff; font-size: 9px; font-weight: 700; padding: 3px 7px; border-radius: 3px; letter-spacing: 0.1em; }
+.sephora-text { font-size: 13px; color: #e8e0d5; }
+.sephora-sub { font-size: 11px; color: #6b5e4e; margin-top: 2px; }
+.sephora-arrow { color: #6b5e4e; font-size: 18px; }
 
 .store-tabs { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
 .store-tabs::-webkit-scrollbar { display: none; }
 .store-tab {
   background: transparent; border: none; border-bottom: 2px solid transparent;
-  color: #6b5e4e; padding: 10px 14px; cursor: pointer; font-size: 13px;
+  color: #6b5e4e; padding: 10px 11px; cursor: pointer; font-size: 12px;
   font-family: 'DM Sans', sans-serif; white-space: nowrap;
-  display: flex; align-items: center; gap: 7px;
+  display: flex; align-items: center; gap: 6px;
   -webkit-tap-highlight-color: transparent;
 }
 .store-tab.active { color: #e8e0d5; border-bottom-color: #c8a96e; }
-.store-tab.active.lgm { border-bottom-color: #c8a96e; color: #c8a96e; }
-.store-tab.active.fs  { border-bottom-color: #d4688a; color: #d4688a; }
 .store-tag { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; padding: 2px 5px; border-radius: 2px; color: #fff; }
 
 #filters-bar {
@@ -73,8 +84,7 @@ h1 em { font-style: italic; font-weight: 400; color: #c8a96e; }
 #sort-select {
   background: #1a1714; border: 1px solid #2a2520; color: #a09080;
   padding: 8px 10px; border-radius: 8px; font-size: 12px;
-  font-family: 'DM Sans', sans-serif; cursor: pointer; outline: none;
-  -webkit-appearance: none; text-align: center;
+  font-family: 'DM Sans', sans-serif; cursor: pointer; outline: none; -webkit-appearance: none;
 }
 .cat-scroll { display: flex; gap: 7px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
 .cat-scroll::-webkit-scrollbar { display: none; }
@@ -104,16 +114,12 @@ main { position: relative; z-index: 1; padding: 20px 14px 80px; }
 #grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; animation: fadeIn 0.3s ease; }
 @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
 
-.card {
-  background: #141210; border: 1px solid #1e1b18; border-radius: 8px;
-  overflow: hidden; text-decoration: none; color: inherit; display: block;
-  -webkit-tap-highlight-color: transparent;
-}
+.card { background: #141210; border: 1px solid #1e1b18; border-radius: 8px; overflow: hidden; text-decoration: none; color: inherit; display: block; -webkit-tap-highlight-color: transparent; }
 .card:active { opacity: 0.85; transform: scale(0.98); }
 .card-img-wrap { position: relative; aspect-ratio: 3/4; background: #1a1714; overflow: hidden; }
 .card-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .card-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 32px; }
-.discount-badge { position: absolute; top: 7px; left: 7px; background: #d4688a; color: #fff; font-size: 10px; font-weight: 700; padding: 3px 7px; border-radius: 4px; letter-spacing: 0.04em; }
+.discount-badge { position: absolute; top: 7px; left: 7px; background: #d4688a; color: #fff; font-size: 10px; font-weight: 700; padding: 3px 7px; border-radius: 4px; }
 .store-badge { position: absolute; bottom: 7px; right: 7px; color: #fff; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; opacity: 0.9; letter-spacing: 0.1em; }
 .card-body { padding: 10px 10px 12px; }
 .card-title { font-size: 11px; line-height: 1.4; color: #c8bfb0; margin-bottom: 7px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
@@ -125,7 +131,6 @@ main { position: relative; z-index: 1; padding: 20px 14px 80px; }
 .page-btn { background: transparent; border: 1px solid #2a2520; color: #a09080; padding: 9px 18px; border-radius: 6px; cursor: pointer; font-size: 13px; font-family: 'DM Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
 .page-btn:disabled { opacity: 0.3; pointer-events: none; }
 .page-info { color: #6b5e4e; font-size: 13px; }
-
 .hidden { display: none !important; }
 ```
 
@@ -137,20 +142,29 @@ main { position: relative; z-index: 1; padding: 20px 14px 80px; }
 <header>
   <div class="header-inner">
     <div>
-      <div class="header-label">FASHION DEALS</div>
-      <h1>Le Garage Mode<em> & </em>Frida Shop</h1>
+      <div class="header-label">FASHION & BEAUTY DEALS</div>
+      <h1>Le Garage Mode, Frida<em> &amp; </em>Nabla</h1>
       <p class="header-sub" id="header-sub">Caricamento...</p>
     </div>
     <button id="refresh-btn">↺ Aggiorna</button>
   </div>
+
+  <a class="sephora-banner" href="https://www.sephora.it/offerte.html" target="_blank" rel="noopener noreferrer">
+    <div class="sephora-left">
+      <span class="sephora-tag">SEP</span>
+      <div>
+        <div class="sephora-text">Sephora Italia — Offerte</div>
+        <div class="sephora-sub">Apre il sito ufficiale ↗</div>
+      </div>
+    </div>
+    <span class="sephora-arrow">›</span>
+  </a>
+
   <div class="store-tabs" id="store-tabs">
     <button class="store-tab active" data-store="all">Tutti</button>
-    <button class="store-tab lgm" data-store="legaragemode">
-      <span class="store-tag" style="background:#c8a96e">LGM</span>Le Garage Mode
-    </button>
-    <button class="store-tab fs" data-store="fridashop">
-      <span class="store-tag" style="background:#d4688a">FS</span>Frida Shop
-    </button>
+    <button class="store-tab" data-store="legaragemode"><span class="store-tag" style="background:#c8a96e">LGM</span>Le Garage</button>
+    <button class="store-tab" data-store="fridashop"><span class="store-tag" style="background:#d4688a">FS</span>Frida Shop</button>
+    <button class="store-tab" data-store="nabla"><span class="store-tag" style="background:#7b5ea7">NAB</span>Nabla</button>
   </div>
 </header>
 
@@ -189,11 +203,11 @@ main { position: relative; z-index: 1; padding: 20px 14px 80px; }
 
 <script>
 const STORES = [
-  { id: 'legaragemode', name: 'Le Garage Mode', url: 'https://legaragemode.com',  apiUrl: 'https://legaragemode.com/products.json?limit=250',  accent: '#c8a96e', tag: 'LGM' },
-  { id: 'fridashop',    name: 'Frida Shop',     url: 'https://www.fridashop.net', apiUrl: 'https://www.fridashop.net/products.json?limit=250', accent: '#d4688a', tag: 'FS'  },
+  { id:'legaragemode', name:'Le Garage Mode',  url:'https://legaragemode.com',   apiUrl:'https://legaragemode.com/products.json?limit=250',   accent:'#c8a96e', tag:'LGM', emoji:'👗' },
+  { id:'fridashop',    name:'Frida Shop',       url:'https://www.fridashop.net',  apiUrl:'https://www.fridashop.net/products.json?limit=250',  accent:'#d4688a', tag:'FS',  emoji:'👗' },
+  { id:'nabla',        name:'Nabla Cosmetics',  url:'https://nablacosmetics.com', apiUrl:'https://nablacosmetics.com/products.json?limit=250', accent:'#7b5ea7', tag:'NAB', emoji:'💄' },
 ];
 
-// Multiple proxies — tried in order until one works
 const PROXIES = [
   url => `https://corsproxy.io/?${encodeURIComponent(url)}`,
   url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
@@ -201,48 +215,43 @@ const PROXIES = [
   url => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
 ];
 
-const CATEGORIES = ['Tutti','In saldo','Abiti','Top','Pantaloni','Giacche','Borse','Scarpe'];
+const CATEGORIES = ['Tutti','In saldo','Abiti','Top','Pantaloni','Giacche','Borse','Scarpe','Make-up','Skincare'];
 const CAT_KEYWORDS = {
-  Abiti:    ['abito','vestito','dress','gonna','skirt'],
-  Top:      ['top','t-shirt','maglia','body','blusa','camicia','shirt'],
-  Pantaloni:['pantalone','jeans','legging','short'],
-  Giacche:  ['giacca','giubbino','cappotto','blazer','coat','bomber'],
-  Borse:    ['borsa','bag','clutch','zaino'],
-  Scarpe:   ['scarpe','shoes','sneaker','stivale','sandalo','tacco'],
+  Abiti:     ['abito','vestito','dress','gonna','skirt'],
+  Top:       ['top','t-shirt','maglia','body','blusa','camicia','shirt'],
+  Pantaloni: ['pantalone','jeans','legging','short'],
+  Giacche:   ['giacca','giubbino','cappotto','blazer','coat','bomber'],
+  Borse:     ['borsa','bag','clutch','zaino'],
+  Scarpe:    ['scarpe','shoes','sneaker','stivale','sandalo','tacco'],
+  'Make-up': ['foundation','blush','mascara','lipstick','palette','eyeshadow','rossetto','fondotinta','ombretto','matita','eyeliner','bronzer','highlighter','labbra','occhi'],
+  Skincare:  ['serum','siero','moisturizer','crema','cleanser','detergente','toner','mask','maschera','spf','idratante'],
 };
 const PER_PAGE = 20;
 
-let allProducts = [];
-let selectedStore = 'all';
-let selectedCat   = 'Tutti';
-let sortBy        = 'discount';
-let search        = '';
-let page          = 1;
+let allProducts=[], selectedStore='all', selectedCat='Tutti', sortBy='discount', search='', page=1;
 
-const $loadingWrap   = document.getElementById('loading-wrap');
-const $loadingDetail = document.getElementById('loading-detail');
-const $errorBox      = document.getElementById('error-box');
-const $errorMsg      = document.getElementById('error-msg');
-const $emptyState    = document.getElementById('empty-state');
-const $grid          = document.getElementById('grid');
-const $pagination    = document.getElementById('pagination');
-const $headerSub     = document.getElementById('header-sub');
-const $catScroll     = document.getElementById('cat-scroll');
+const $loadingWrap=document.getElementById('loading-wrap');
+const $loadingDetail=document.getElementById('loading-detail');
+const $errorBox=document.getElementById('error-box');
+const $errorMsg=document.getElementById('error-msg');
+const $emptyState=document.getElementById('empty-state');
+const $grid=document.getElementById('grid');
+const $pagination=document.getElementById('pagination');
+const $headerSub=document.getElementById('header-sub');
+const $catScroll=document.getElementById('cat-scroll');
 
-// Build category buttons
 CATEGORIES.forEach(cat => {
   const btn = document.createElement('button');
-  btn.className = 'cat-btn' + (cat === 'Tutti' ? ' active' : '');
+  btn.className = 'cat-btn' + (cat==='Tutti'?' active':'');
   btn.textContent = cat;
-  btn.addEventListener('click', () => { selectedCat = cat; page = 1; render(); });
+  btn.addEventListener('click', () => { selectedCat=cat; page=1; render(); });
   $catScroll.appendChild(btn);
 });
 
 document.getElementById('store-tabs').addEventListener('click', e => {
   const btn = e.target.closest('.store-tab');
   if (!btn) return;
-  selectedStore = btn.dataset.store;
-  page = 1;
+  selectedStore = btn.dataset.store; page = 1;
   document.querySelectorAll('.store-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   render();
@@ -250,154 +259,116 @@ document.getElementById('store-tabs').addEventListener('click', e => {
 
 document.getElementById('refresh-btn').addEventListener('click', fetchAll);
 document.getElementById('retry-btn').addEventListener('click', fetchAll);
-document.getElementById('search-input').addEventListener('input', e => { search = e.target.value; page = 1; render(); });
-document.getElementById('sort-select').addEventListener('change', e => { sortBy = e.target.value; page = 1; render(); });
+document.getElementById('search-input').addEventListener('input', e => { search=e.target.value; page=1; render(); });
+document.getElementById('sort-select').addEventListener('change', e => { sortBy=e.target.value; page=1; render(); });
 
-// Fetch with proxy fallback
 async function fetchWithFallback(apiUrl, storeName) {
-  for (let i = 0; i < PROXIES.length; i++) {
-    const proxyUrl = PROXIES[i](apiUrl);
-    $loadingDetail.textContent = `${storeName}: tentativo ${i + 1}/${PROXIES.length}...`;
+  for (let i=0; i<PROXIES.length; i++) {
+    $loadingDetail.textContent = `${storeName}: tentativo ${i+1}/${PROXIES.length}...`;
     try {
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 8000);
-      const res = await fetch(proxyUrl, { signal: controller.signal });
-      clearTimeout(timeout);
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), 9000);
+      const res = await fetch(PROXIES[i](apiUrl), { signal: ctrl.signal });
+      clearTimeout(t);
       if (!res.ok) continue;
       const text = await res.text();
-      // Validate it's actually JSON with products
       if (!text.includes('"products"')) continue;
       return JSON.parse(text);
-    } catch (e) {
-      // Try next proxy
-      continue;
-    }
+    } catch(e) { continue; }
   }
-  throw new Error('Tutti i proxy hanno fallito per ' + storeName);
+  throw new Error('Tutti i proxy falliti per ' + storeName);
 }
 
 function parseProducts(data, store) {
   if (!data?.products) return [];
-  return data.products
-    .filter(p => p.variants?.length > 0)
-    .map(p => {
-      const v = p.variants[0];
-      const price     = parseFloat(v.price);
-      const compareAt = parseFloat(v.compare_at_price);
-      const discount  = compareAt > price ? Math.round((compareAt - price) / compareAt * 100) : 0;
-      return {
-        store, title: p.title, price, discount,
-        compareAt: compareAt > price ? compareAt : null,
-        image: p.images?.[0]?.src || null,
-        url: `${store.url}/products/${p.handle}`,
-        type: p.product_type || '',
-        tags: p.tags || [],
-        available: p.variants.some(v => v.available),
-      };
-    })
-    .filter(p => p.available);
+  return data.products.filter(p => p.variants?.length > 0).map(p => {
+    const v = p.variants[0];
+    const price = parseFloat(v.price);
+    const compareAt = parseFloat(v.compare_at_price);
+    const discount = compareAt > price ? Math.round((compareAt-price)/compareAt*100) : 0;
+    return { store, title:p.title, price, discount, compareAt: compareAt>price?compareAt:null,
+      image:p.images?.[0]?.src||null, url:`${store.url}/products/${p.handle}`,
+      type:p.product_type||'', tags:p.tags||[], available:p.variants.some(v=>v.available) };
+  }).filter(p => p.available);
 }
 
 function matchCat(p, cat) {
-  if (cat === 'Tutti') return true;
-  if (cat === 'In saldo') return p.discount > 0;
-  const hay = (p.title + ' ' + p.type + ' ' + p.tags.join(' ')).toLowerCase();
-  return (CAT_KEYWORDS[cat] || []).some(kw => hay.includes(kw));
+  if (cat==='Tutti') return true;
+  if (cat==='In saldo') return p.discount > 0;
+  const hay = (p.title+' '+p.type+' '+p.tags.join(' ')).toLowerCase();
+  return (CAT_KEYWORDS[cat]||[]).some(kw => hay.includes(kw));
 }
 
 async function fetchAll() {
   show($loadingWrap); hide($errorBox); hide($grid); hide($emptyState); hide($pagination);
-  $headerSub.textContent = 'Caricamento...';
-  $loadingDetail.textContent = '';
+  $headerSub.textContent='Caricamento...'; $loadingDetail.textContent='';
 
   const results = await Promise.allSettled(
-    STORES.map(store => fetchWithFallback(store.apiUrl, store.name).then(data => parseProducts(data, store)))
+    STORES.map(s => fetchWithFallback(s.apiUrl, s.name).then(d => parseProducts(d, s)))
   );
-
-  const all = results.flatMap(r => r.status === 'fulfilled' ? r.value : []);
-
+  const all = results.flatMap(r => r.status==='fulfilled' ? r.value : []);
   hide($loadingWrap);
 
-  if (all.length === 0) {
-    $errorMsg.textContent = 'Impossibile raggiungere i siti. Controlla la connessione e riprova.';
-    show($errorBox);
-    return;
-  }
+  if (all.length===0) { $errorMsg.textContent='Impossibile raggiungere i siti. Controlla la connessione.'; show($errorBox); return; }
 
   allProducts = all;
-  const sales = all.filter(p => p.discount > 0).length;
-  $headerSub.textContent = `${new Date().toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'})} · ${all.length} prodotti · ${sales} in saldo`;
-
-  // Show partial warning if one store failed
-  const failed = results.filter(r => r.status === 'rejected');
-  if (failed.length > 0) {
-    $headerSub.textContent += ` · ⚠ ${failed.length} negozio non caricato`;
-  }
-
+  const sales = all.filter(p=>p.discount>0).length;
+  const failed = results.filter(r=>r.status==='rejected').length;
+  $headerSub.textContent = `${new Date().toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'})} · ${all.length} prodotti · ${sales} in saldo`
+    + (failed>0 ? ` · ⚠ ${failed} negozio non caricato` : '');
   render();
 }
 
 function render() {
-  document.querySelectorAll('.cat-btn').forEach(b => {
-    b.classList.toggle('active', b.textContent === selectedCat);
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', b.textContent===selectedCat));
+
+  const filtered = allProducts.filter(p => {
+    if (selectedStore!=='all' && p.store.id!==selectedStore) return false;
+    if (!matchCat(p, selectedCat)) return false;
+    if (search && !p.title.toLowerCase().includes(search.toLowerCase())) return false;
+    return true;
+  }).sort((a,b) => {
+    if (sortBy==='discount')  return b.discount-a.discount;
+    if (sortBy==='price_asc') return a.price-b.price;
+    return b.price-a.price;
   });
 
-  const filtered = allProducts
-    .filter(p => {
-      if (selectedStore !== 'all' && p.store.id !== selectedStore) return false;
-      if (!matchCat(p, selectedCat)) return false;
-      if (search && !p.title.toLowerCase().includes(search.toLowerCase())) return false;
-      return true;
-    })
-    .sort((a, b) => {
-      if (sortBy === 'discount')   return b.discount - a.discount;
-      if (sortBy === 'price_asc')  return a.price - b.price;
-      if (sortBy === 'price_desc') return b.price - a.price;
-      return 0;
-    });
-
-  if (filtered.length === 0) { show($emptyState); hide($grid); hide($pagination); return; }
+  if (filtered.length===0) { show($emptyState); hide($grid); hide($pagination); return; }
   hide($emptyState);
 
-  const totalPages = Math.ceil(filtered.length / PER_PAGE);
-  if (page > totalPages) page = totalPages;
-  const slice = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+  const totalPages = Math.ceil(filtered.length/PER_PAGE);
+  if (page>totalPages) page=totalPages;
+  const slice = filtered.slice((page-1)*PER_PAGE, page*PER_PAGE);
 
   $grid.innerHTML = slice.map(p => `
     <a class="card" href="${p.url}" target="_blank" rel="noopener noreferrer">
       <div class="card-img-wrap">
-        ${p.image
-          ? `<img class="card-img" src="${p.image}" alt="${escHtml(p.title)}" loading="lazy"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
-          : ''}
-        <div class="card-img-placeholder" style="${p.image ? 'display:none' : ''}">👗</div>
-        ${p.discount > 0 ? `<div class="discount-badge">–${p.discount}%</div>` : ''}
+        ${p.image?`<img class="card-img" src="${p.image}" alt="${escHtml(p.title)}" loading="lazy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`:'' }
+        <div class="card-img-placeholder" style="${p.image?'display:none':''}">${p.store.emoji}</div>
+        ${p.discount>0?`<div class="discount-badge">–${p.discount}%</div>`:''}
         <div class="store-badge" style="background:${p.store.accent}">${p.store.tag}</div>
       </div>
       <div class="card-body">
         <p class="card-title">${escHtml(p.title)}</p>
         <div class="card-price-row">
           <span class="card-price">€${p.price.toFixed(2)}</span>
-          ${p.compareAt ? `<span class="card-old-price">€${p.compareAt.toFixed(2)}</span>` : ''}
+          ${p.compareAt?`<span class="card-old-price">€${p.compareAt.toFixed(2)}</span>`:''}
         </div>
       </div>
-    </a>
-  `).join('');
+    </a>`).join('');
 
   show($grid);
 
-  if (totalPages > 1) {
+  if (totalPages>1) {
     $pagination.innerHTML = `
-      <button class="page-btn" id="prev-btn" ${page === 1 ? 'disabled' : ''}>← Prec</button>
+      <button class="page-btn" id="prev-btn" ${page===1?'disabled':''}>← Prec</button>
       <span class="page-info">${page} / ${totalPages}</span>
-      <button class="page-btn" id="next-btn" ${page === totalPages ? 'disabled' : ''}>Succ →</button>
-    `;
-    document.getElementById('prev-btn')?.addEventListener('click', () => { page--; render(); window.scrollTo(0, 0); });
-    document.getElementById('next-btn')?.addEventListener('click', () => { page++; render(); window.scrollTo(0, 0); });
+      <button class="page-btn" id="next-btn" ${page===totalPages?'disabled':''}>Succ →</button>`;
+    document.getElementById('prev-btn')?.addEventListener('click', ()=>{ page--; render(); window.scrollTo(0,0); });
+    document.getElementById('next-btn')?.addEventListener('click', ()=>{ page++; render(); window.scrollTo(0,0); });
     show($pagination);
-  } else {
-    hide($pagination);
-  }
+  } else { hide($pagination); }
 }
 
 function show(el) { el.classList.remove('hidden'); }
